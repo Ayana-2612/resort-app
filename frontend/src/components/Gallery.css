@@ -1,0 +1,43 @@
+/* src/components/Gallery.css */
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 30px; /* Space between images */
+  padding: 50px;
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.gallery-img {
+  width: 40%;
+  max-width: 250px; /* optional: keep icons same size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center images inside grid cell */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive for tablets */
+@media (max-width: 900px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .gallery-container {
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 20px;
+    padding: 20px;
+  }
+}
